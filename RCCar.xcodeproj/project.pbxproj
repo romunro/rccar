@@ -14,6 +14,8 @@
 		2753BDA7277A847800E1237C /* controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753BDA6277A847800E1237C /* controller.swift */; };
 		346D43B4277BCFD300DC6781 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 346D43B3277BCFD300DC6781 /* ExternalAccessory.framework */; };
 		346D43B7277BD07900DC6781 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D43B6277BD07900DC6781 /* Car.swift */; };
+		346D43E6277BEF6200DC6781 /* Wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D43E5277BEF6200DC6781 /* Wrapper.cpp */; };
+		34C1729A277BF20E001E3748 /* libNFDriver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C17298277BF1EB001E3748 /* libNFDriver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,12 @@
 		346D43B3277BCFD300DC6781 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		346D43B5277BCFEA00DC6781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		346D43B6277BD07900DC6781 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		346D43DA277BED1D00DC6781 /* RCCar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCCar-Bridging-Header.h"; sourceTree = "<group>"; };
+		346D43E5277BEF6200DC6781 /* Wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wrapper.cpp; sourceTree = "<group>"; };
+		346D43E9277BF01700DC6781 /* Wrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wrapper.hpp; sourceTree = "<group>"; };
+		346D43EA277BF03E00DC6781 /* Wrapper-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wrapper-bridge.h"; sourceTree = "<group>"; };
+		346D43F1277BF0CF00DC6781 /* NFDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFDriver.h; sourceTree = "<group>"; };
+		34C17298277BF1EB001E3748 /* libNFDriver.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNFDriver.a; path = External/NFDriver/libNFDriver.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				346D43B4277BCFD300DC6781 /* ExternalAccessory.framework in Frameworks */,
+				34C1729A277BF20E001E3748 /* libNFDriver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,9 +53,11 @@
 		2753BD8C277A835F00E1237C = {
 			isa = PBXGroup;
 			children = (
+				346D43EB277BF06A00DC6781 /* External */,
 				2753BD97277A835F00E1237C /* RCCar */,
 				2753BD96277A835F00E1237C /* Products */,
 				346D43B2277BCFD300DC6781 /* Frameworks */,
+				346D43DA277BED1D00DC6781 /* RCCar-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,9 +95,29 @@
 		346D43B2277BCFD300DC6781 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34C17298277BF1EB001E3748 /* libNFDriver.a */,
 				346D43B3277BCFD300DC6781 /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		346D43EB277BF06A00DC6781 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				346D43F0277BF0CF00DC6781 /* NFDriver */,
+				346D43EA277BF03E00DC6781 /* Wrapper-bridge.h */,
+				346D43E9277BF01700DC6781 /* Wrapper.hpp */,
+				346D43E5277BEF6200DC6781 /* Wrapper.cpp */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		346D43F0277BF0CF00DC6781 /* NFDriver */ = {
+			isa = PBXGroup;
+			children = (
+				346D43F1277BF0CF00DC6781 /* NFDriver.h */,
+			);
+			path = NFDriver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +152,7 @@
 				TargetAttributes = {
 					2753BD94277A835F00E1237C = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -163,6 +195,7 @@
 				2753BD99277A835F00E1237C /* RCCarApp.swift in Sources */,
 				346D43B7277BD07900DC6781 /* Car.swift in Sources */,
 				2753BDA7277A847800E1237C /* controller.swift in Sources */,
+				346D43E6277BEF6200DC6781 /* Wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RCCar/RCCar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -311,12 +345,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/NFDriver",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imunro.RCCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCCar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RCCar/RCCar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -346,12 +387,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/NFDriver",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imunro.RCCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCCar-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,10 +1,15 @@
 import SwiftUI
+import AVFAudio
 
 @main
 struct RCCarApp: App {
     
     private let rotationChangePublisher = NotificationCenter.default
             .publisher(for: UIDevice.orientationDidChangeNotification)
+    
+    init() {
+        print("The integer from C++ is \(getIntFromCPP())")
+    }
     
     var body: some Scene {
         WindowGroup {

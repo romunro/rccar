@@ -7,7 +7,7 @@ char c=' ';
 void setup() {
   Serial.begin(9600);
   Serial.println("ready");
-  Bluetooth.begin(9600);
+  Bluetooth.begin(230400);
   pinMode(4, OUTPUT);
   digitalWrite(4, HIGH);
 
@@ -18,7 +18,6 @@ void setup() {
 
 void loop() 
 {
-  
   if(Bluetooth.available())
   {
     c=Bluetooth.read();

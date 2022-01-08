@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TLVCoding",
+        "repositoryURL": "https://github.com/PureSwift/TLVCoding.git",
+        "state": {
+          "branch": "master",
+          "revision": "5ca7ce251496ab6af6494b7bdfc9170c9b546d7e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
